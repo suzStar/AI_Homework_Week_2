@@ -1,0 +1,182 @@
+body {
+    margin: 1em 5em;
+    background: #FBF2EE;
+    font-family: "Urbanist", sans-serif;
+    color: #303030;
+}
+
+.site-footer {
+    display: flex;
+    flex: 5;
+    flex-flow: row wrap;
+    justify-content: flex-end;
+    list-style: none;
+    position: fixed;
+    right: 0;
+    bottom: 0;
+}
+
+.site-footer a {
+    text-decoration: none;
+    display: block;
+    padding: 1em;
+}
+
+.bookFinder {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-top: 2em;
+}
+
+.book-finder__hero {
+    flex: 1;
+    max-width: 50%;
+}
+
+.book-finder__hero img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.container {
+    flex: 1;
+    max-width: 45%;
+}
+
+h1 {
+    font-size: 7.5em;
+    line-height: 75%;
+}
+
+h3 {
+    margin-top: -3em;
+}
+
+.book-form {
+    border-radius: 15px;
+    background: #FFFEFF50;
+    padding: 2.5em;
+    margin-top: 2em;
+    text-align: center;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 8px 24px,
+        rgba(17, 17, 26, 0.1) 0px 16px 56px,
+        rgba(17, 17, 26, 0.1) 0px 24px 80px;
+}
+
+.book-form__input {
+    padding: 16px;
+    border: 0 solid rgba(39, 33, 66, 0.5);
+    height: 50px;
+    width: 90%;
+    font-size: 16px;
+    border-radius: 10px;
+    line-height: 20px;
+    color: #272044;
+}
+
+#poem-input::placeholder {
+    white-space: pre-line;
+    position: absolute;
+    top: 50%;
+    transform: tra
+}
+
+.formContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    /* cleaner spacing */
+    gap: 1rem;
+    margin: 20px 0;
+    align-items: stretch;
+    text-align: left;
+}
+
+.book-form__group {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-width: 200px;
+}
+
+select {
+    width: 100%;
+    /* fill the formGroup */
+    border: 1px solid transparent;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 1em;
+    min-height: 3rem;
+    margin: 0.5em 0;
+}
+
+.book-form__submit {
+    align-items: center;
+    background-clip: padding-box;
+    background-color: #CF7854;
+    border: 1px solid transparent;
+    border-radius: .25rem;
+    box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    display: inline-flex;
+    font-size: 16px;
+    font-weight: 600;
+    justify-content: center;
+    line-height: 1.25;
+    margin: 0;
+    min-height: 3rem;
+    padding: calc(.875rem - 1px) calc(1.5rem - 1px);
+    position: relative;
+    text-decoration: none;
+    transition: all 250ms;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: baseline;
+    width: 100%;
+}
+
+.book-form__submit:hover,
+.book-form__submit:focus {
+    background-color: #e08862;
+    box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+}
+
+.book-form__submit:hover {
+    transform: translateY(-1px);
+}
+
+.book-form__submit:active {
+    background-color: #c85000;
+    box-shadow: rgba(0, 0, 0, .06) 0 2px 4px;
+    transform: translateY(0);
+}
+
+.poem.contentAdded {
+    margin-top: 2em;
+    font-size: 20px;
+    line-height: 1.5;
+}
+
+.blinkingAnimation {
+    animation: blink-animation 1s steps(5, start) infinite;
+}
+
+@keyframes blink-animation {
+    to {
+        visibility: hidden;
+    }
+}
+
+@-webkit-keyframes blink-animation {
+    to {
+        visibility: hidden;
+    }
+}
