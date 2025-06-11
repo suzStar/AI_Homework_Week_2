@@ -1,8 +1,8 @@
 body {
     margin: 1em 5em;
-    background: #FBF2EE;
+    background: #1b1b1b;
     font-family: "Urbanist", sans-serif;
-    color: #303030;
+    color: #FDFDFD;
 }
 
 .site-footer {
@@ -14,12 +14,14 @@ body {
     position: fixed;
     right: 0;
     bottom: 0;
+
 }
 
 .site-footer a {
     text-decoration: none;
     display: block;
     padding: 1em;
+    color: #E95858;
 }
 
 .bookFinder {
@@ -30,19 +32,16 @@ body {
 }
 
 .book-finder__hero {
-    flex: 1;
-    max-width: 50%;
+    position: fixed;
+    transform: rotate(-20deg);
+    right: 165px;
+    bottom: 50px;
 }
 
 .book-finder__hero img {
-    width: 100%;
+    width: 125%;
     height: auto;
     object-fit: cover;
-}
-
-.container {
-    flex: 1;
-    max-width: 45%;
 }
 
 h1 {
@@ -54,9 +53,25 @@ h3 {
     margin-top: -3em;
 }
 
+.book-finder__container {
+    display: flex;
+    justify-content: space-evenly;
+}
+
 .book-form {
+    flex: 1;
+    max-width: 55%;
+}
+
+.book-finder__results {
+    flex: 1;
+    max-width: 30%;
+}
+
+.book-form,
+.book-finder__results {
     border-radius: 15px;
-    background: #FFFEFF50;
+    background: #5e5b5e50;
     padding: 2.5em;
     margin-top: 2em;
     text-align: center;
@@ -68,8 +83,8 @@ h3 {
 .book-form__input {
     padding: 16px;
     border: 0 solid rgba(39, 33, 66, 0.5);
-    height: 50px;
-    width: 90%;
+    height: 60px;
+    width: 100%;
     font-size: 16px;
     border-radius: 10px;
     line-height: 20px;
@@ -80,7 +95,6 @@ h3 {
     white-space: pre-line;
     position: absolute;
     top: 50%;
-    transform: tra
 }
 
 .formContainer {
@@ -118,9 +132,9 @@ select {
 .book-form__submit {
     align-items: center;
     background-clip: padding-box;
-    background-color: #CF7854;
+    background-color: #E95858;
     border: 1px solid transparent;
-    border-radius: .25rem;
+    border-radius: .5rem;
     box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
     box-sizing: border-box;
     color: #fff;
@@ -145,7 +159,7 @@ select {
 
 .book-form__submit:hover,
 .book-form__submit:focus {
-    background-color: #e08862;
+    background-color: #d44545;
     box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
 }
 
@@ -154,7 +168,7 @@ select {
 }
 
 .book-form__submit:active {
-    background-color: #c85000;
+    background-color: #c23b3b;
     box-shadow: rgba(0, 0, 0, .06) 0 2px 4px;
     transform: translateY(0);
 }
@@ -163,20 +177,4 @@ select {
     margin-top: 2em;
     font-size: 20px;
     line-height: 1.5;
-}
-
-.blinkingAnimation {
-    animation: blink-animation 1s steps(5, start) infinite;
-}
-
-@keyframes blink-animation {
-    to {
-        visibility: hidden;
-    }
-}
-
-@-webkit-keyframes blink-animation {
-    to {
-        visibility: hidden;
-    }
 }

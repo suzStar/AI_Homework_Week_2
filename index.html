@@ -20,83 +20,91 @@
         <main class="container">
             <h1>AI Book <br />Finder</h1>
             <h3>Find Your Perfect Book Match with SheCodes AI</h3>
+            <div class="book-finder__container">
+                <div class="book-form">
+                    <p>Find you next reading using our AI recommendations, tell us what you are in the mood for what
+                        should
+                        the
+                        genre/topic should the book be about. What writing style would you prefer? </p>
 
-            <div class="book-form">
-                <p>Find you next reading using our AI recommendations, tell us what you are in the mood for what should
-                    the
-                    genre/topic should the book be about. What writing style would you prefer? </p>
+                    <form action="" method="get" class="book-form__form" id="book-input">
+                        <div class="formContainer">
+                            <div class="book-form__group">
+                                <label for="mood-select">Mood:</label>
+                                <select name="mood" id="mood-select">
+                                    <option>Choose</option>
+                                    <option value="Fiction">Fiction</option>
+                                    <option value="Non-Fiction">Non-Fiction</option>
+                                    <option value="Children">Children’s</option>
+                                </select>
+                            </div>
 
-                <form action="" method="get" class="book-form__form" id="book-input">
-                    <div class="formContainer">
-                        <div class="book-form__group">
-                            <label for="mood-select">Mood:</label>
-                            <select name="mood" id="mood-select">
-                                <option>Choose</option>
-                                <option value="Fiction">Fiction</option>
-                                <option value="Non-Fiction">Non-Fiction</option>
-                                <option value="Children">Children’s</option>
-                            </select>
+                            <div class="book-form__group">
+                                <label for="genre-topic-select">Genre:</label>
+                                <select name="genre-topic" id="genre-topic-select">
+                                    <option value="Adventure" data-type="Fiction">Adventure</option>
+                                    <option value="Classic" data-type="Fiction">Classic</option>
+                                    <option value="Crime, Thriller & Mystery" data-type="Fiction">Crime, Thriller &
+                                        Mystery
+                                    </option>
+                                    <option value="Historical" data-type="Fiction">Historical</option>
+                                    <option value="Horror" data-type="Fiction">Horror</option>
+                                    <option value="Romantic" data-type="Fiction">Romantic</option>
+                                    <option value="Science Fiction & Fantasy" data-type="Fiction">Science Fiction &
+                                        Fantasy
+                                    </option>
+                                    <option value="Graphic Novels & Manga" data-type="Fiction">Graphic Novels & Manga
+                                    </option>
+
+                                    <option value="Biography" data-type="Non-Fiction">Biography</option>
+                                    <option value="Food & Drink" data-type="Non-Fiction">Food & Drink</option>
+                                    <option value="History" data-type="History">Symbolism</option>
+                                    <option value="Sport" data-type="Non-Fiction">Sport</option>
+                                    <option value="Art, Fashion & Photography" data-type="Non-Fiction">Art, Fashion &
+                                        Photography</option>
+                                    <option value="Health & Lifestyle" data-type="Non-Fiction">Health & Lifestyle
+                                    </option>
+                                    <option value="Personal Development" data-type="Non-Fiction">Personal Development
+                                    </option>
+                                    <option value="Travel" data-type="Non-Fiction">Travel</option>
+
+                                    <option value="Ages 5-8" data-type="Children">Ages 5-8</option>
+                                    <option value="Ages 9-12" data-type="Children">Ages 9-12</option>
+                                    <option value="Early Learning" data-type="Children">Early Learning</option>
+                                    <option value="Education" data-type="Children">Education</option>
+                                    <option value="Ages 5-8" data-type="Children">Ages 5-8</option>
+                                    <option value="Fiction" data-type="Children">Fiction</option>
+                                    <option value="Hobbies & Interests" data-type="Children">Hobbies & Interests
+                                    </option>
+                                    <option value="Interactive & Activity" data-type="Children">Interactive & Activity
+                                    </option>
+                                    <option value="Picture" data-type="Children">Picture</option>
+                                    <option value="Teen & Young Adult" data-type="Children">Teen & Young Adult</option>
+                                </select>
+                            </div>
+
+
+                            <input type="text" class="book-form__input"
+                                placeholder="Add in the last book you read to help with our recommendation"
+                                id="user-input" required autocomplete="off" />
                         </div>
 
-                        <div class="book-form__group">
-                            <label for="genre-topic-select">Genre:</label>
-                            <select name="genre-topic" id="genre-topic-select">
-                                <option value="Adventure" data-type="Fiction">Adventure</option>
-                                <option value="Classic" data-type="Fiction">Classic</option>
-                                <option value="Crime, Thriller & Mystery" data-type="Fiction">Crime, Thriller & Mystery
-                                </option>
-                                <option value="Historical" data-type="Fiction">Historical</option>
-                                <option value="Horror" data-type="Fiction">Horror</option>
-                                <option value="Romantic" data-type="Fiction">Romantic</option>
-                                <option value="Science Fiction & Fantasy" data-type="Fiction">Science Fiction & Fantasy
-                                </option>
-                                <option value="Graphic Novels & Manga" data-type="Fiction">Graphic Novels & Manga
-                                </option>
 
-                                <option value="Biography" data-type="Non-Fiction">Biography</option>
-                                <option value="Food & Drink" data-type="Non-Fiction">Food & Drink</option>
-                                <option value="History" data-type="History">Symbolism</option>
-                                <option value="Sport" data-type="Non-Fiction">Sport</option>
-                                <option value="Art, Fashion & Photography" data-type="Non-Fiction">Art, Fashion &
-                                    Photography</option>
-                                <option value="Health & Lifestyle" data-type="Non-Fiction">Health & Lifestyle</option>
-                                <option value="Personal Development" data-type="Non-Fiction">Personal Development
-                                </option>
-                                <option value="Travel" data-type="Non-Fiction">Travel</option>
-
-                                <option value="Ages 5-8" data-type="Children">Ages 5-8</option>
-                                <option value="Ages 9-12" data-type="Children">Ages 9-12</option>
-                                <option value="Early Learning" data-type="Children">Early Learning</option>
-                                <option value="Education" data-type="Children">Education</option>
-                                <option value="Ages 5-8" data-type="Children">Ages 5-8</option>
-                                <option value="Fiction" data-type="Children">Fiction</option>
-                                <option value="Hobbies & Interests" data-type="Children">Hobbies & Interests</option>
-                                <option value="Interactive & Activity" data-type="Children">Interactive & Activity
-                                </option>
-                                <option value="Picture" data-type="Children">Picture</option>
-                                <option value="Teen & Young Adult" data-type="Children">Teen & Young Adult</option>
-                            </select>
+                        <div class="form-button">
+                            <input class="book-form__submit" type="submit" value="Find Books" />
                         </div>
+                    </form>
+                </div>
 
-
-                        <input type="text" class="book-form__input"
-                            placeholder="Add in the last book you read to help with our recommendation" id="user-input"
-                            required autocomplete="off" />
-                    </div>
-
-
-                    <div class="form-button">
-                        <input class="book-form__submit" type="submit" value="Find Books" />
-                    </div>
-
-                    <div class="book-finder__results" id="bookListOutput">
-                    </div>
-                </form>
+                <div class="book-finder__results" id="bookListOutput">
+                    this is some test text
+                </div>
             </div>
         </main>
 
+
         <section class="book-finder__hero">
-            <img src="" alt="" />
+            <img src="src/images/Layer 0.png" alt="" />
         </section>
     </div>
     <footer class="site-footer">
