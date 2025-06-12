@@ -4,8 +4,6 @@ window.onload = function () {
     "change",
     function () {
       current_val = this.value;
-
-      console.log(current_val);
       for (let el of document.querySelectorAll("#genre-topic-select option")) {
         el.style.display = "none";
       }
@@ -19,31 +17,38 @@ window.onload = function () {
   );
 };
 
-function showPoem(poemResponse) {
-  new Typewriter("#poem-output", {
-    strings: poemResponse.data.answer,
+function showBookList(bookListResponse) {
+  console.log(bookListResponse.data.answer);
+  new Typewriter("#bookListOutput", {
+    strings: bookListResponse.data.answer,
     autoStart: true,
   });
 }
 
-function generatePoem(event) {
+function generateList(event) {
   event.preventDefault();
   let userInput = document.querySelector("#user-input");
-  let userFormat = document.querySelector("#type-select");
-  let userPoeticDevices = document.querySelector("#poetic-devices-select");
+  let userMood = document.querySelector("#mood-select");
+  let userGenre = document.querySelector("#genre-topic-select");
 
   let apiKey = "d04fb3e0250t4fa0be3579oeba197b2c";
-  let context =
-    "You are a romantic Poem expert and love to write short poems,  You mission is to generate poems in basic HTML and separate each line with a <br />. Make sure to follow the user instructions. On the last line make sure to add a double < br />. Assign Titles to with h4. Sign the poem with 'SheCodes AI' inside a <strong> element at the end of the poem ";
-  let prompt = `User instructions: Please write a ${userFormat.value} poem that explores the theme of ${userInput.value}, and make sure to use the following poetic device: ${userPoeticDevices.value}.`;
+  let context = `You are a librarian expert. Your mission is to generate a list of 8 books in basic HTML using an unordered list. 
+Follow the user's instructions. Each book must appear in this format:<li>Book Title <strong>by Author Name</strong></li>
+Do not include any other formatting such as code blocks, HTML tags outside of <ul> and <li>, or explanations. Output only the <ul> with the <li> items.`;
+
+  let prompt = `User instructions: Recommend 8 books in the genre: ${userGenre.value}, that are similar to "${userInput.value}".`;
 
   let urlBuilder = `https://api.shecodes.io/ai/v1/generate?prompt=${prompt}&context=${context}&key=${apiKey}`;
 
-  let poemElement = document.querySelector("#poem-output");
-  poemElement.classList.add("contentAdded");
-  poemElement.innerHTML = ` Generating a poem for you about ${userInput.value}`;
-  axios.get(urlBuilder).then(showPoem);
+  console.log(context);
+  console.log(prompt);
+  console.log(urlBuilder);
+
+  let bookListElement = document.querySelector("#bookListOutput");
+  //bookListElement.classList.add("contentAdded");
+  bookListElement.innerHTML = `Generating a poem for you about ${userInput.value}`;
+  axios.get(urlBuilder).then(showBookList);
 }
 
-let poemForm = document.querySelector("#poem-input");
-poemForm.addEventListener("submit", generatePoem);
+let booklistGenerator = document.querySelector("#book-input");
+booklistGenerator.addEventListener("submit", generateList);

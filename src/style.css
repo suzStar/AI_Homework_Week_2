@@ -31,14 +31,19 @@ body {
     margin-top: 2em;
 }
 
-.book-finder__hero {
+.container {
+    margin-bottom: 5em;
+    padding-bottom: 5em;
+}
+
+.book-finder_hero {
     position: fixed;
     transform: rotate(-20deg);
     right: 165px;
     bottom: 50px;
 }
 
-.book-finder__hero img {
+.book-finder_hero img {
     width: 125%;
     height: auto;
     object-fit: cover;
@@ -53,23 +58,29 @@ h3 {
     margin-top: -3em;
 }
 
-.book-finder__container {
+.book-finder_container {
     display: flex;
+    flex-direction: row;
     justify-content: space-evenly;
 }
 
 .book-form {
-    flex: 1;
     max-width: 55%;
+    /* align-content: center; */
 }
 
-.book-finder__results {
-    flex: 1;
+.book-finder_results {
     max-width: 30%;
 }
 
+p {
+    margin-top: 0;
+    margin-bottom: 2.5em;
+    font-size: 20px;
+}
+
 .book-form,
-.book-finder__results {
+.book-finder_results {
     border-radius: 15px;
     background: #5e5b5e50;
     padding: 2.5em;
@@ -80,7 +91,7 @@ h3 {
         rgba(17, 17, 26, 0.1) 0px 24px 80px;
 }
 
-.book-form__input {
+.book-form_input {
     padding: 16px;
     border: 0 solid rgba(39, 33, 66, 0.5);
     height: 60px;
@@ -89,6 +100,7 @@ h3 {
     border-radius: 10px;
     line-height: 20px;
     color: #272044;
+    margin-bottom: 1em;
 }
 
 #poem-input::placeholder {
@@ -108,7 +120,7 @@ h3 {
     text-align: left;
 }
 
-.book-form__group {
+.book-form_group {
     display: flex;
     flex-direction: column;
     flex: 1;
@@ -129,7 +141,7 @@ select {
     margin: 0.5em 0;
 }
 
-.book-form__submit {
+.book-form_submit {
     align-items: center;
     background-clip: padding-box;
     background-color: #E95858;
@@ -140,13 +152,14 @@ select {
     color: #fff;
     cursor: pointer;
     display: inline-flex;
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 600;
     justify-content: center;
     line-height: 1.25;
     margin: 0;
     min-height: 3rem;
-    padding: calc(.875rem - 1px) calc(1.5rem - 1px);
+    /* padding: calc(.875rem - 1px) calc(1.5rem - 1px); */
+    padding: 1.5em 0;
     position: relative;
     text-decoration: none;
     transition: all 250ms;
@@ -157,24 +170,24 @@ select {
     width: 100%;
 }
 
-.book-form__submit:hover,
-.book-form__submit:focus {
+.book-form_submit:hover,
+.book-form_submit:focus {
     background-color: #d44545;
     box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
 }
 
-.book-form__submit:hover {
+.book-form_submit:hover {
     transform: translateY(-1px);
 }
 
-.book-form__submit:active {
+.book-form_submit:active {
     background-color: #c23b3b;
     box-shadow: rgba(0, 0, 0, .06) 0 2px 4px;
     transform: translateY(0);
 }
 
-.poem.contentAdded {
-    margin-top: 2em;
+li {
+    text-align: start;
+    line-height: 170%;
     font-size: 20px;
-    line-height: 1.5;
 }

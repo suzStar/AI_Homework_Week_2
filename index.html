@@ -20,16 +20,16 @@
         <main class="container">
             <h1>AI Book <br />Finder</h1>
             <h3>Find Your Perfect Book Match with SheCodes AI</h3>
-            <div class="book-finder__container">
+            <div class="book-finder_container">
                 <div class="book-form">
                     <p>Find you next reading using our AI recommendations, tell us what you are in the mood for what
                         should
                         the
                         genre/topic should the book be about. What writing style would you prefer? </p>
 
-                    <form action="" method="get" class="book-form__form" id="book-input">
+                    <form action="" method="get" class="book-form_form" id="book-input">
                         <div class="formContainer">
-                            <div class="book-form__group">
+                            <div class="book-form_group">
                                 <label for="mood-select">Mood:</label>
                                 <select name="mood" id="mood-select">
                                     <option>Choose</option>
@@ -39,7 +39,7 @@
                                 </select>
                             </div>
 
-                            <div class="book-form__group">
+                            <div class="book-form_group">
                                 <label for="genre-topic-select">Genre:</label>
                                 <select name="genre-topic" id="genre-topic-select">
                                     <option value="Adventure" data-type="Fiction">Adventure</option>
@@ -55,7 +55,6 @@
                                     </option>
                                     <option value="Graphic Novels & Manga" data-type="Fiction">Graphic Novels & Manga
                                     </option>
-
                                     <option value="Biography" data-type="Non-Fiction">Biography</option>
                                     <option value="Food & Drink" data-type="Non-Fiction">Food & Drink</option>
                                     <option value="History" data-type="History">Symbolism</option>
@@ -67,7 +66,6 @@
                                     <option value="Personal Development" data-type="Non-Fiction">Personal Development
                                     </option>
                                     <option value="Travel" data-type="Non-Fiction">Travel</option>
-
                                     <option value="Ages 5-8" data-type="Children">Ages 5-8</option>
                                     <option value="Ages 9-12" data-type="Children">Ages 9-12</option>
                                     <option value="Early Learning" data-type="Children">Early Learning</option>
@@ -84,26 +82,35 @@
                             </div>
 
 
-                            <input type="text" class="book-form__input"
+                            <input type="text" class="book-form_input"
                                 placeholder="Add in the last book you read to help with our recommendation"
                                 id="user-input" required autocomplete="off" />
                         </div>
 
 
                         <div class="form-button">
-                            <input class="book-form__submit" type="submit" value="Find Books" />
+                            <input class="book-form_submit" type="submit" value="Find Books" />
                         </div>
                     </form>
                 </div>
 
-                <div class="book-finder__results" id="bookListOutput">
-                    this is some test text
+                <div class="book-finder_results" id="bookListOutput">                    
+                    <ul>
+                        <li>The Seven Deaths of Evelyn Hardcastle by Stuart Turton</li>
+                        <li>The Cuckoo's Calling by Robert Galbraith</li>
+                        <li>The No. 1 Ladies' Detective Agency by Alexander McCall Smith</li>
+                        <li>And Then There Were None by Agatha Christie</li>
+                        <li>The Alice Network by Kate Quinn</li>
+                        <li>In the Woods by Tana French</li>
+                        <li>The Woman in White by Wilkie Collins</li>
+                        <li>The Woman in White by Wilkie Collins</li>
+                    </ul>
                 </div>
             </div>
         </main>
 
 
-        <section class="book-finder__hero">
+        <section class="book-finder_hero">
             <img src="src/images/Layer 0.png" alt="" />
         </section>
     </div>
