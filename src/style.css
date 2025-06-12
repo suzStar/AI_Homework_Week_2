@@ -8,13 +8,13 @@ body {
 .site-footer {
     display: flex;
     flex: 5;
-    flex-flow: row wrap;
-    justify-content: flex-end;
+    justify-content: flex-start;
     list-style: none;
     position: fixed;
-    right: 0;
+    left: 2%;
     bottom: 0;
-
+    width: 100%;
+    z-index: -2;
 }
 
 .site-footer a {
@@ -25,26 +25,24 @@ body {
 }
 
 .bookFinder {
+    position: relative;
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
-    margin-top: 2em;
-}
-
-.container {
-    margin-bottom: 5em;
-    padding-bottom: 5em;
 }
 
 .book-finder_hero {
     position: fixed;
     transform: rotate(-20deg);
-    right: 165px;
+    top: auto;
+    right: 0;
     bottom: 50px;
+    z-index: -1;
 }
 
 .book-finder_hero img {
     width: 125%;
+    max-width: 100%;
     height: auto;
     object-fit: cover;
 }
@@ -61,16 +59,12 @@ h3 {
 .book-finder_container {
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: space-between;
 }
 
 .book-form {
-    max-width: 55%;
+    max-width: 45%;
     /* align-content: center; */
-}
-
-.book-finder_results {
-    max-width: 30%;
 }
 
 p {
@@ -103,7 +97,7 @@ p {
     margin-bottom: 1em;
 }
 
-#poem-input::placeholder {
+#book-form_input::placeholder {
     white-space: pre-line;
     position: absolute;
     top: 50%;
@@ -190,4 +184,82 @@ li {
     text-align: start;
     line-height: 170%;
     font-size: 20px;
+}
+
+#bookListOutput {
+    width: 35%;
+}
+
+#booklistUnList {
+    margin: 0;
+}
+
+.contentAdded {
+    min-width: 35%
+}
+
+.blinkingAnimation {
+    animation: blink-animation 1s steps(5, start) infinite;
+}
+
+@keyframes blink-animation {
+    to {
+        visibility: hidden;
+    }
+}
+
+@-webkit-keyframes blink-animation {
+    to {
+        visibility: hidden;
+    }
+}
+
+@media only screen and (max-width: 1250px) {
+    .book-finder_container {
+        flex-direction: column;
+    }
+
+    #bookListOutput {
+        width: 45%;
+        margin-bottom: 5em;
+    }
+
+    .site-footer {
+        width: 100%;
+        background: #1b1b1b;
+        justify-content: flex-end;
+        left: 0;
+    }
+}
+
+@media only screen and (max-width: 880px) {
+    .book-finder_container {
+        flex-direction: column;
+    }
+
+    .book-finder_container {
+        width: 100%;
+    }
+
+    .book-form {
+        max-width: 80%;
+    }
+
+    #bookListOutput {
+        width: 80%;
+    }
+
+    .book-finder_hero {
+        opacity: 0;
+    }
+
+    .site-footer {
+        width: 100%;
+        background: #1b1b1b;
+        justify-content: flex-end;
+        z-index: 0;
+        left: 0;
+    }
+
+
 }

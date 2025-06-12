@@ -18,7 +18,6 @@ window.onload = function () {
 };
 
 function showBookList(bookListResponse) {
-  console.log(bookListResponse.data.answer);
   new Typewriter("#bookListOutput", {
     strings: bookListResponse.data.answer,
     autoStart: true,
@@ -32,21 +31,16 @@ function generateList(event) {
   let userGenre = document.querySelector("#genre-topic-select");
 
   let apiKey = "d04fb3e0250t4fa0be3579oeba197b2c";
-  let context = `You are a librarian expert. Your mission is to generate a list of 8 books in basic HTML using an unordered list. 
-Follow the user's instructions. Each book must appear in this format:<li>Book Title <strong>by Author Name</strong></li>
-Do not include any other formatting such as code blocks, HTML tags outside of <ul> and <li>, or explanations. Output only the <ul> with the <li> items.`;
+  let context = `You're a librarian. Return 8 books as a basic HTML unordered list. Format: Title <strong>by Author</strong>. No summaries or markdown.`;
 
   let prompt = `User instructions: Recommend 8 books in the genre: ${userGenre.value}, that are similar to "${userInput.value}".`;
 
   let urlBuilder = `https://api.shecodes.io/ai/v1/generate?prompt=${prompt}&context=${context}&key=${apiKey}`;
 
-  console.log(context);
-  console.log(prompt);
-  console.log(urlBuilder);
-
   let bookListElement = document.querySelector("#bookListOutput");
-  //bookListElement.classList.add("contentAdded");
-  bookListElement.innerHTML = `Generating a poem for you about ${userInput.value}`;
+  bookListElement.classList.add("contentAdded");
+  bookListElement.innerHTML = `<div class="blinkingAnimation">Generating book list for "${userInput.value}"...</div>`;
+
   axios.get(urlBuilder).then(showBookList);
 }
 
